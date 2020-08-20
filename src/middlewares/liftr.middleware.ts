@@ -1,5 +1,9 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from "express";
 
-export const liftrMiddleware = (req: Request, res: Response, next: NextFunction) => {
-    return next();
+export const liftrMiddleware = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  return next();
 };

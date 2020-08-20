@@ -2,7 +2,11 @@
     "rules": {
       "no-magic-numbers": false,
       "no-unused-expression": false,
+      "no-submodule-imports": false,
+      "no-implicit-dependencies": false,
+      "prefer-const": false,
+      "no-console": false,
       "trailing-comma": [true, {"multiline": "always", "singleline": "never"}]
-    }
+    },
+    "extends": ["tslint:latest", "tslint-config-prettier"]
   }
-  

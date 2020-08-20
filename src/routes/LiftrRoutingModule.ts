@@ -1,15 +1,15 @@
-import { AppRouter } from '@liftr/core';
-import { FlightModule } from '@routes/Flight/Flight.module';
-import { LiftrModule } from './liftr.module';
+import { AppRouter } from "@liftr/core";
+import { FlightModule } from "@routes/Flight/Flight.module";
+import { LiftrModule } from "./liftr.module";
 
 export const routes: AppRouter[] = [
-
   {
-    path: '/Flight',
+    path: "/Flight",
     module: FlightModule,
     middleware: [],
-  },  {
-    path: '/',
+  },
+  {
+    path: "/",
     module: LiftrModule,
     middleware: [],
   },
