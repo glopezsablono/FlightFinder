@@ -29,7 +29,8 @@
           ],
           "@services/*": [
             "./services/*",
-            "../dist/services/*"
+            "../dist/services/*",
+            "./services/flight-service.ts"
           ],
           "@middlewares/*": [
             "./middlewares/*",

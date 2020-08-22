@@ -6,7 +6,8 @@
       "no-implicit-dependencies": false,
       "prefer-const": false,
       "no-console": false,
-      "trailing-comma": [true, {"multiline": "always", "singleline": "never"}]
+      "rulesDirectory": ["tslint-plugin-prettier"],
+      "prettier": true
     },
     "extends": ["tslint:latest", "tslint-config-prettier"]
   }

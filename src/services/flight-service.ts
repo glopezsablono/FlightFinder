@@ -1,12 +1,15 @@
 import axios, {AxiosResponse} from "axios";
-import { config } from "../config";
-import {response} from "express";
+import {config} from "../config";
 import {FlightSearchResponse} from "../interfaces/flight-search-response.interface";
 import {Flight} from "../model/Flight";
+import {FlightSearchMapper} from "../mappers/flight-search.mapper";
+import {some} from "lodash";
 
-const fetchFlightsDataFromUrl: (url) => Promise<AxiosResponse<FlightSearchResponse>> = (url) => {
+const fetchFlightsDataFrom: (url) => Promise<AxiosResponse<FlightSearchResponse>> = (url) => {
   return axios.get(url, {
     timeout: config.timeout,
+
+
     auth: {
       username: config.auth.username,
       password: config.auth.password,
@@ -14,19 +17,21 @@ const fetchFlightsDataFromUrl: (url) => Promise<AxiosResponse<FlightSearchRespon
   });
 };
 
-const checkIfAlreadyExist: (flight, flights) => boolean = (flight: Flight, flights: Flight[]) => {
-  return flights.some((item) => {
-
-  });
-}
-
 export const fetchFlightsData = async () => {
   const responsesAsPromise: PromiseSettledResult<any>[] = await Promise.allSettled(
-    config.services.map((serviceUrl) => fetchFlightsDataFromUrl(serviceUrl)),
+      config.services.map((serviceUrl) => fetchFlightsDataFrom(serviceUrl)),
   );
-  const flightsData = responsesAsPromise.reduce((acc: Flight[], val: PromiseSettledResult<any>) => {
-    if(val.status === "fulfilled") {
-
+  return responsesAsPromise.reduce((acc: Flight[], val: PromiseSettledResult<any>) => {
+    if (val.status === "fulfilled") {
+      const flightInfo = FlightSearchMapper.toDomain(val.value.data);
+      flightInfo.flights.forEach(f => {
+        const isFlightIncludedAlready = some(acc, (fl => {
+          return f.isEqual(fl);
+        }));
+        if (!isFlightIncludedAlready) {
+          acc.push(f);
+        }
+      });
     }
     return acc;
   }, []);

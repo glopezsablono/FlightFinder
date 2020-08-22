@@ -26,5 +26,5 @@ export const config: Config = {
     "https://discovery-stub.comtravo.com/source1",
     "https://discovery-stub.comtravo.com/source2",
   ],
-  timeout: Number.parseFloat(process.env.timeout) || 500,
+  timeout: Number.parseFloat(process.env.TIMEOUT) || 500,
 };
