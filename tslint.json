@@ -6,8 +6,13 @@
       "no-implicit-dependencies": false,
       "prefer-const": false,
       "no-console": false,
-      "rulesDirectory": ["tslint-plugin-prettier"],
-      "prettier": true
+      "rulesDirectory": [
+        "tslint-plugin-prettier"
+      ]
     },
-    "extends": ["tslint:latest", "tslint-config-prettier"]
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ]
   }

@@ -1,5 +1,5 @@
-import {Flight} from "../model/Flight";
+import {Flight} from '@models/Flight';
 
 export interface FlightSearch {
-    flights: Flight[]
+    flights: Flight[];
 }

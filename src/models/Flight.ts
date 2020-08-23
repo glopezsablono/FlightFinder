@@ -1,4 +1,4 @@
-import { Slice } from "./Slice";
+import {Slice} from '@models/Slice';
 
 export class Flight {
     public price: number;
@@ -12,7 +12,7 @@ export class Flight {
 
     setId(id: string): void {
         this.id = id;
-    };
+    }
 
     getId(): string {
         return this.id;
