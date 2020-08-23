@@ -8,7 +8,7 @@ Two flights are considered duplicated if they shared the same flight number and 
 
 1) Add `.env` file with:
 
-```js
+```
 USERNAME=USERNAME
 PASSWORD=PASSWORD
 PORT=PORT #Optional
