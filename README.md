@@ -19,5 +19,8 @@ TIMEOUT=TIMEOUT #Optional
 
 3) Run `npm start` to start the server
 
-4) Make a GET request to http://localhost/4000/flights
+4) Make a GET request to http://localhost:4000/flights
 
+## Documentation
+
+The docs for the service should be available on http://localhost:4000/docs
