@@ -1,0 +1,18 @@
+{
+    "rules": {
+      "no-magic-numbers": false,
+      "no-unused-expression": false,
+      "no-submodule-imports": false,
+      "no-implicit-dependencies": false,
+      "prefer-const": false,
+      "no-console": false,
+      "rulesDirectory": [
+        "tslint-plugin-prettier"
+      ]
+    },
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ]
+  }

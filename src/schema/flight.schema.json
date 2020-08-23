@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": [
+    "price",
+    "slices"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "price": {
+      "description": "Price of the flight",
+      "type": "number"
+    },
+    "slices": {
+      "description": "Collection of flight journeys.",
+      "type": "array",
+      "items": {
+        "$ref": "./slice.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "required": [
+    "flights"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "flights": {
+      "description": "Collection of flights.",
+      "type": "array",
+      "items": {
+        "$ref": "./flight.schema.json"
+      }
+    }
+  }
+}
