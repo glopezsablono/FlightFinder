@@ -8,15 +8,13 @@ const flightSearchService = new FlightSearchService();
 export const FlightController = async (req: Request, res: Response, next) => {
     try {
         const flightsData = await flightSearchService.fetchData();
-        res.status(200)
-            .json(FligthSearchSerializer.serialize(flightsData))
-            .send();
+        res.status(200).json(FligthSearchSerializer.serialize(flightsData));
     } catch (e) {
-        res.status(Status.INTERNAL_SERVER_ERROR)
-            .json({
-                type: Status[`${Status.INTERNAL_SERVER_ERROR}_NAME`],
-                message: e.message,
-            })
-            .send();
+        res.status(Status.INTERNAL_SERVER_ERROR).json({
+            type: Status[`${Status.INTERNAL_SERVER_ERROR}_NAME`],
+            message: e.message,
+        });
+    } finally {
+        res.send();
     }
 };
