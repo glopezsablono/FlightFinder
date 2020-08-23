@@ -1,6 +1,6 @@
-import {Flight} from '@models/Flight';
-import {SliceMapper} from '@mappers/slice.mapper';
-import {FlightResponse} from '@interfaces/flight-response.interface';
+import { Flight } from '@models/Flight';
+import { SliceMapper } from '@mappers/slice.mapper';
+import { FlightResponse } from '@interfaces/flight-response.interface';
 
 export class FlightMapper {
     public static toDomain(flightResponse: FlightResponse): Flight {

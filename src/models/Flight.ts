@@ -1,11 +1,11 @@
-import {Slice} from '@models/Slice';
+import { Slice } from '@models/Slice';
 
 export class Flight {
     public price: number;
     public slices: Slice[];
     private id: string;
 
-    constructor({price, slices}) {
+    constructor({ price, slices }) {
         this.price = price;
         this.slices = slices;
     }

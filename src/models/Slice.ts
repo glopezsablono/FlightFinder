@@ -6,7 +6,7 @@ export class Slice {
     public departureDateTimeUTC: string;
     public arrivalDateTimeUTC: string;
 
-    constructor({flightNumber, departureDateTimeUTC, arrivalDateTimeUTC}) {
+    constructor({ flightNumber, departureDateTimeUTC, arrivalDateTimeUTC }) {
         this.flightNumber = flightNumber;
         this.departureDateTimeUTC = departureDateTimeUTC;
         this.arrivalDateTimeUTC = arrivalDateTimeUTC;

@@ -1,4 +1,4 @@
-import {FlightResponse} from './flight-response.interface';
+import { FlightResponse } from './flight-response.interface';
 
 export interface FlightSearchResponse {
     flights: FlightResponse[];

@@ -1,7 +1,7 @@
 // @ts-nocheck
 import * as sinon from 'sinon';
-import {expect} from 'chai';
-import {FlightSearchService} from './FlightSearchService';
+import { expect } from 'chai';
+import { FlightSearchService } from './FlightSearchService';
 
 describe('src/services/FlightSearchService.ts', () => {
     let sandbox: sinon.SinonSandbox;

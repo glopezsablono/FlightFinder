@@ -1,13 +1,15 @@
-import axios, {AxiosResponse} from 'axios';
-import {config} from '../config';
-import {FlightSearchResponse} from '@interfaces/flight-search-response.interface';
-import {Flight} from '@models/Flight';
-import {FlightSearchMapper} from '@mappers/flight-search.mapper';
-import {some} from 'lodash';
+import axios, { AxiosResponse } from 'axios';
+import { config } from '../config';
+import { FlightSearchResponse } from '@interfaces/flight-search-response.interface';
+import { Flight } from '@models/Flight';
+import { FlightSearchMapper } from '@mappers/flight-search.mapper';
+import { some } from 'lodash';
 
 export class FlightSearchService {
     public async fetchData(): Promise<Flight[]> {
-        const responsesAsPromise: PromiseSettledResult<any>[] = await Promise.allSettled(
+        const responsesAsPromise: PromiseSettledResult<
+            any
+        >[] = await Promise.allSettled(
             config.services.map((serviceUrl) =>
                 this._fetchFlightsDataFrom(serviceUrl)
             )

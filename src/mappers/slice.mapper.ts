@@ -1,5 +1,5 @@
-import {Slice} from '@models/Slice';
-import {SliceResponse} from '@interfaces/slice-response.interface';
+import { Slice } from '@models/Slice';
+import { SliceResponse } from '@interfaces/slice-response.interface';
 
 export class SliceMapper {
     public static toDomain(sliceResponse: SliceResponse): Slice {
