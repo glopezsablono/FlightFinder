@@ -1,5 +1,5 @@
-import {AppRouter} from '@liftr/core';
-import {FlightModule} from '@routes/Flight/Flight.module';
+import { AppRouter } from '@liftr/core';
+import { FlightModule } from '@routes/Flight/Flight.module';
 
 export const routes: AppRouter[] = [
     {

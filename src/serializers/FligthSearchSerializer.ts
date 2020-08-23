@@ -1,5 +1,5 @@
-import {FlightSearchResponse} from '@interfaces/flight-search-response.interface';
-import {Flight} from '@models/Flight';
+import { FlightSearchResponse } from '@interfaces/flight-search-response.interface';
+import { Flight } from '@models/Flight';
 
 export class FligthSearchSerializer {
     public static serialize(flights: Flight[]): FlightSearchResponse {
