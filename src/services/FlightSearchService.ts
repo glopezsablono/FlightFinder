@@ -15,7 +15,10 @@ export class FlightSearchService {
             )
         );
         return responsesAsPromise.reduce(
-            (acc: Flight[], responseAsPromise: PromiseSettledResult<any>) => {
+            (
+                flightsAcc: Flight[],
+                responseAsPromise: PromiseSettledResult<any>
+            ) => {
                 // Handle promises
                 if (responseAsPromise.status === 'fulfilled') {
                     // Transform to domain objects
@@ -25,15 +28,15 @@ export class FlightSearchService {
                     // Remove duplicates
                     flightSearch.flights.forEach((flight: Flight) => {
                         const isFlightIncludedAlready = some(
-                            acc,
+                            flightsAcc,
                             (tempFlight) => flight.isEqual(tempFlight)
                         );
                         if (!isFlightIncludedAlready) {
-                            acc.push(flight);
+                            flightsAcc.push(flight);
                         }
                     });
                 }
-                return acc;
+                return flightsAcc;
             },
             []
         );
@@ -43,6 +46,11 @@ export class FlightSearchService {
     public _fetchFlightsDataFrom(
         url: string
     ): Promise<AxiosResponse<FlightSearchResponse>> {
+        if (!config.auth.username || !config.auth.password) {
+            throw new Error(
+                `Unfortunately we can't find the flight information. Try again later.`
+            );
+        }
         return axios.get(url, {
             timeout: config.timeout,
             auth: {
