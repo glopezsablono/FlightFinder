@@ -1,4 +1,4 @@
-import {SliceResponse} from "./slice-response.interface";
+import {SliceResponse} from './slice-response.interface';
 
 export interface FlightResponse {
     price: number;

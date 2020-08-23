@@ -11,5 +11,4 @@ export class Slice {
         this.departureDateTimeUTC = departureDateTimeUTC;
         this.arrivalDateTimeUTC = arrivalDateTimeUTC;
     }
-
 }

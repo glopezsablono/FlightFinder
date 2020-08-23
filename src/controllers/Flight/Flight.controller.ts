@@ -1,5 +1,5 @@
 import {Request, Response} from 'express';
-import {FlightSearchService} from '@services/flight-service';
+import {FlightSearchService} from '@services/FlightSearchService';
 import {FligthSearchSerializer} from '@serializers/FligthSearchSerializer';
 
 const flightSearchService = new FlightSearchService();
